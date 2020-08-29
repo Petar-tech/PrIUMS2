@@ -1,4 +1,10 @@
-# PrIUMS2
+# PrIUMS2 Instructions
 
 - [x] Use **Terminal.exe** to connect to the *COM* ports.
-- [ ] Setup virtual COM ports using [Com0Com!](http://com0com.sourceforge.net/)
+- [x] Setup virtual COM ports using [Com0Com!](http://com0com.sourceforge.net/)
+
+[^1]: How to start the project:
+```
+cd src
+python gui.py
+```
