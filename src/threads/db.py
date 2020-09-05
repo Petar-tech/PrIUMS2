@@ -1,6 +1,7 @@
 from PyQt5.QtCore import QThread, pyqtSignal
 from pymongo import MongoClient
 from time import gmtime, strftime
+from random import randint
 import sys
 
 
@@ -13,13 +14,12 @@ class MyDBThread(QThread):
     def run(self):
         self.client = MongoClient("mongodb://localhost:27017/")
         self.db = self.client["database"]
-        self.cnt = 0
         self.doc = {}
 
     def update_db(self, data, current):
         current_time = strftime("%H:%M:%S", gmtime())
 
-        self.cnt += 1
+        self.cnt = randint(1, 1000000)
         self.doc["_id"] = self.cnt
 
         if current == "Temperature":
